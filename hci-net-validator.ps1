@@ -98,7 +98,7 @@ foreach($endpoint in $endpoints80) {
 #Test outbound connection for port 9418 endpoint.
 $Result = Test-NetConnection -ComputerName $endpoint9418 -Port 9418
 if ($Result.TcpTestSucceeded -eq $false) {
-        Write-Host "Connection Test failed for" $endpoint "on port 9418" -ForegroundColor Red
+        Write-Host "Connection Test failed for" $endpoint9418 "on port 9418" -ForegroundColor Red
         Write-Host "Host = " $env:COMPUTERNAME -ForegroundColor Red
         Write-Host
         }
@@ -130,7 +130,7 @@ Invoke-Command ($ServerList) {
     #Test outbound connection for port 9418 endpoint.
     $Result = Test-NetConnection -ComputerName $using:endpoint9418 -Port 9418
     if ($Result.TcpTestSucceeded -eq $false) {
-            Write-Host "Connection Test failed for" $endpoint "on port 9418" -ForegroundColor Red
+            Write-Host "Connection Test failed for" $using:endpoint9418 "on port 9418" -ForegroundColor Red
             Write-Host "Host = " $env:COMPUTERNAME -ForegroundColor Red
             Write-Host 
             }
